@@ -1,9 +1,21 @@
 /*  Final project 
- *  Authors Erin Cooper and Geoff Groenendale
+ *  Authors 
+ *  Erin Cooper - 
+ *  Geoff Groenendale - https://www.linkedin.com/in/ggroenendale/
+ *
+ *   #5970b2
+ *   #fff1cc
+ *   #b3c6ff
+ *   #ffeab3
+ *   #b29a5b
+ *
+ *
+ *
  * 
 */
 
 /* ===============  Meyers reset  ===============  */
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -53,34 +65,106 @@ table {
 	border-spacing: 0;
 }
 
-/* =========== Code Begins here  =========== */
+/* =========== Root Styles Begin here  =========== */
+
+:root {
+	--body-color: #687864;
+	--header-color: #31708e;
+	--nav-color: #f7f9fb;
+	--text-color: navy;
+}
+
+/* =========== Font Styles Begin here  =========== */
+
+h1 {
+	font-size: 3.5em;
+	font-family: Raleway, Georgia, Verdana;
+	font-weight: bold;
+	color: navy;
+	text-align: center;
+	text-shadow: 1px 1px #5085A5;
+}
+
+h2 {
+	font-size: 2.0em;
+	font-family: Raleway, Georgia, Verdana;
+	font-weight: bold;
+	color: navy;
+	text-align: center;
+	text-shadow: .5px .5px #5085A5;
+}
+
+p {
+	font-size: 1.0em;
+	font-family: Raleway, Georgia, Verdana;
+}
+
+/* =========== Main DOM Styles Begin here  =========== */
 
 body {
 	background-color: #687864;
 }
 
 #wrapper {
-	position: fixed;
+	position: relative;
 	width: 100%;
 }
+
+/* =========== Header Styles Begin here  =========== */
 
 header {
 	background: #31708e;
 	width: 100%;
-	height: 80px;
+	height: auto;
 }
 
-h1 {
-	font-size: 2em;
-	color: white;
+nav {
+	padding:1%;
+	margin: 3% auto;
+	font-family: Raleway, Georgia, Verdana;
+	}
+
+nav ul {
+	border-top: 2px solid black;
+	border-bottom:2px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	background: #f7f9fb;
 }
+		
+nav li {
+	display: inline-block;
+	margin: 1%;
+	width: 5em;
+	border: 1px solid orange;
+}
+	
+nav li a {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+		
+nav li a:link, nav li a:visited  {
+	color: navy;
+	background: #f7f9fb;
+	border: 1px solid black;
+}
+	
+nav li a:hover, nav li a:focus {
+	color: red;
+	background: black;
+	border: 2px solid white;
+}
+
+/* =========== Content Styles Begin here  =========== */
 
 #content {
 	margin: auto;
 	border: 1px solid yellow;
 	background: #f7f9fb;
 	width: 90%;
-	height: 3000px;
+	height: auto;
 }
 
 #thing {
@@ -89,30 +173,24 @@ h1 {
 }
 
 #img-wrapper {
-	position: static;
+	border: 3px solid black;
+	position: absolute;
 	overflow: hidden;
-	width: 50%;
-	padding: 30px;
-	left: 0px;
+	width: 30%;
+	left: 110px;
 }
 
 #bio-wrapper {
-	position: static;
-	float: right;
-	border: 1px solid purple;
-	width: 42%;
-	height: auto;
-	right: 0px;	
-}
-
-#img-bio {
-	padding-top: 40px;
+	font-size: 1.5em;
+	font-family: Raleway, Georgia, Verdana;
+	color: navy;
+	position: absolute;
+	border: 3px solid purple;
 	width: 40%;
-	right: 0px;
-}
-
-#img-bio p {
-	color: white;
+	height: auto;
+	right: 110px;
+	text-align: center;
+	
 }
 
 #recipes {
@@ -136,15 +214,10 @@ ul li {
 }
 
 
-#b29a5b
+/* =========== Footer Styles Begin here  =========== */
 
-#fff1cc
-
-#ffeab3
-
-#5970b2
-
-#b3c6ff
-
-
-
+footer {
+	background-color: var(--header-color);
+	height: 120px;
+	width: 100%;
+}

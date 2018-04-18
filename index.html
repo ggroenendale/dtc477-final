@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8" />
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title id="sitetitle"></title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<script type="text/javascript" src"https://cdnjs.cloudflare.com/ajax/libs/dompurify/1.0.3/purify.min.js"></script>
 </head>
 <body>
 	<div id="wrapper">
 		<header>
 			<h1 id="pagetitle">101 Uses for a Pallet</h1>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li><a href="#" onclick="test_gdb_query()">Test Connect</a></li>
+					</ul>
+				</nav>
 		</header>
 		<div id="content">
 			<div id="thing">
@@ -15,14 +27,13 @@
 					<img src="http://www.placepuppy.net/400/250">
 				</div>
 				<div id="bio-wrapper">
-					<div id="img-bio">
-						<h2>Pallets</h2>
-						<p>Here are some cool things you can do with a pallet</p>
+						<h2 id="thing-name">Pallets</h2>
+						<p>Do you have an old pallet just laying around collecting dust? Bored and looking for a way to kill some time on the weekend? What about that honey-do list? Here are 101 ways to use a pallet!  </p>
 					</div>
-				</div>
 			</div>
-			<div id="test">
-				<button name="test" value="Get Stuff" onclick="get_db()"></button>
+			<div id="test_db">
+				<input type="text" name="newthing" placeholder="Add a new use here!" id="new-input">
+				<input type="button" name="testdb" value="Test Connection" id="new-input-button" onclick="">
 			</div>
 			<div id="recipes">
 				<ul>
@@ -48,7 +59,7 @@
 					</li>
 					<li>
 						<div class="recipe-div">
-							<p><a href="">Kids Jungle Gym</a></p>
+							<p><a href="">Luxury Dog Kennel</a></p>
 						</div>
 					</li>
 					<li>
@@ -59,12 +70,10 @@
 				</ul>
 			</div>
 		</div>
-		<footer>
-			
-		</footer>
+		<footer></footer>
 		</div>
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/script1.js"></script>
 		<script type="text/javascript" src="js/script2.js"></script>
-</body>
+	</body>
 </html>

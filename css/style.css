@@ -1,0 +1,150 @@
+/*  Final project 
+ *  Authors Erin Cooper and Geoff Groenendale
+ * 
+*/
+
+/* ===============  Meyers reset  ===============  */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* =========== Code Begins here  =========== */
+
+body {
+	background-color: #687864;
+}
+
+#wrapper {
+	position: fixed;
+	width: 100%;
+}
+
+header {
+	background: #31708e;
+	width: 100%;
+	height: 80px;
+}
+
+h1 {
+	font-size: 2em;
+	color: white;
+}
+
+#content {
+	margin: auto;
+	border: 1px solid yellow;
+	background: #f7f9fb;
+	width: 90%;
+	height: 3000px;
+}
+
+#thing {
+	border: 1px solid blue;
+	height: 400px;
+}
+
+#img-wrapper {
+	position: static;
+	overflow: hidden;
+	width: 50%;
+	padding: 30px;
+	left: 0px;
+}
+
+#bio-wrapper {
+	position: static;
+	float: right;
+	border: 1px solid purple;
+	width: 42%;
+	height: auto;
+	right: 0px;	
+}
+
+#img-bio {
+	padding-top: 40px;
+	width: 40%;
+	right: 0px;
+}
+
+#img-bio p {
+	color: white;
+}
+
+#recipes {
+	padding-top: 20px;
+}
+
+ul {
+	border: 1px solid green;
+}
+
+ul li {
+	padding-top: 15px;
+	border: 1px solid white;
+	height: 50px;
+	color: white;
+}
+
+.recipe-div {
+	margin: auto;
+	width: 90%;
+}
+
+
+#b29a5b
+
+#fff1cc
+
+#ffeab3
+
+#5970b2
+
+#b3c6ff
+
+
+

@@ -110,20 +110,34 @@ body {
 	width: 100%;
 }
 
+img{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
 /* =========== Header Styles Begin here  =========== */
 
 header {
 	background: #31708e;
 	width: 100%;
 	height: auto;
+	border-bottom: 2px solid black;
 }
 
-nav {
+#nav {
+	display: inline-block;
 	padding:1%;
 	margin: 3% auto;
 	font-family: Raleway, Georgia, Verdana;
-	}
-
+	width: 100%;
+	background: #f7f9fb;
+	border-top: 2px solid black;
+	border-bottom:2px solid black;
+	text-align: center;
+}
+/*
 nav ul {
 	border-top: 2px solid black;
 	border-bottom:2px solid black;
@@ -131,44 +145,48 @@ nav ul {
 	border-right: 2px solid black;
 	background: #f7f9fb;
 }
+*/
 		
-nav li {
+#nav li {
 	display: inline-block;
 	margin: 1%;
-	width: 5em;
-	border: 1px solid orange;
+	width: 10em;
+	border: 2px solid #5085a5;
 }
 	
-nav li a {
+#nav li a {
 	display: block;
 	text-align: center;
 	text-decoration: none;
+	
 }
 		
-nav li a:link, nav li a:visited  {
+#nav li a:link, nav li a:visited  {
 	color: navy;
 	background: #f7f9fb;
-	border: 1px solid black;
+	border: 1px solid #5085a5;
 }
 	
-nav li a:hover, nav li a:focus {
-	color: red;
-	background: black;
-	border: 2px solid white;
+#nav li a:hover, nav li a:focus {
+	color: navy;
+	background: #f7f9fb;
+	border: 2px solid #8fc1e3;
+	
 }
 
 /* =========== Content Styles Begin here  =========== */
 
 #content {
 	margin: auto;
-	border: 1px solid yellow;
+	border: 5px solid yellow;
 	background: #f7f9fb;
 	width: 90%;
-	height: auto;
+	height: 3000px;
+	
 }
 
 #thing {
-	border: 1px solid blue;
+	border: 5px solid blue;
 	height: 400px;
 }
 
@@ -178,6 +196,7 @@ nav li a:hover, nav li a:focus {
 	overflow: hidden;
 	width: 30%;
 	left: 110px;
+	
 }
 
 #bio-wrapper {
@@ -197,11 +216,12 @@ nav li a:hover, nav li a:focus {
 	padding-top: 20px;
 }
 
-ul {
-	border: 1px solid green;
+#ul {
+	border: 5px solid green;
+	
 }
 
-ul li {
+#ul li {
 	padding-top: 15px;
 	border: 1px solid white;
 	height: 50px;
@@ -213,11 +233,27 @@ ul li {
 	width: 90%;
 }
 
-
 /* =========== Footer Styles Begin here  =========== */
 
 footer {
 	background-color: var(--header-color);
 	height: 120px;
 	width: 100%;
+}
+
+
+/*start of query for mobile*/
+		@media only screen and (min-width: 400px) and (max-width: 499px) {
+			
+		
+		}
+		
+/* start of query for tablet */
+		@media only screen and (min-width: 500px) and (max-width: 700px) {
+		
+		}
+			
+/* start of query for desktop */
+		@media only screen and (min-width:701px) {
+		
 }

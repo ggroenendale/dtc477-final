@@ -181,7 +181,7 @@ nav ul {
 	border: 5px solid yellow;
 	background: #f7f9fb;
 	width: 90%;
-	height: 3000px;
+	height: 1500px;
 	
 }
 
@@ -241,6 +241,44 @@ footer {
 	width: 100%;
 }
 
+#foot-wrap {
+	width: 85%;
+	margin: auto;
+	padding: 10px;
+}
+
+#foot-wrap>h3 {
+	font-size: 1.05em;
+	margin-bottom: 10px;
+	color: white;
+	font-weight: 400;
+}
+
+.foot-col {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+	width: 22%;
+}
+
+.foot-col>h4 {
+	color: white;
+	font-size: 1.1em;
+	text-decoration: underline;
+}
+
+.foot-col>p>a {
+	text-decoration: none;
+	color: white;
+}
+
+#oth-things {
+	width: 100%;
+	height: 20px;
+}
+
+
+/* =========== Responsive Styles Begin here  =========== */
 
 /*start of query for mobile*/
 		@media only screen and (min-width: 400px) and (max-width: 499px) {

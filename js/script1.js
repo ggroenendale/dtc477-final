@@ -28,9 +28,20 @@ function setup() {
 		name : 'Pallet',
 		thing : 'Pallet'
 	}
+
+	get_things('foot');
+	add_foot_listeners();
+	
 	document.getElementById('sitetitle').text = 'Pallet';
 	document.getElementById('pagetitle').innerHTML = `${data.num} ways to use a ${data.name}`;
-	document.getElementById('thing-name').innerHTML = `${data.thing}`;
+	document.getElementById('thing-name').innerHTML = `${data.thing}`;	
+}
+
+function get_things($opt) {
+	let things = [];
+	if ($opt == 'foot') {
+		test_gdb_query('foot');
+	}
 }
 
 /**
@@ -161,7 +172,7 @@ function gdb_query(packet) {
 	}); 
 }
 
-function test_gdb_query() {
+function test_gdb_query(loc) {
 	//Declare a variable for the url of the midpoint which is the php file
 	//that handles requests to graphenedb.com
 	const gdb_midp = 'http://dtc-wsuv.org/ggroenendale17/gdb/index.php';
@@ -176,19 +187,22 @@ function test_gdb_query() {
 	$.ajax({
 		url: $gdb_url,
 		type:"GET",
-		dataType:"json",
+		dataType:"jsonp",
+		jsonpCallback: 'jsonpcallback',
 		data: {
 			opt : 'test',
-			q_type : 'test',
+			qtype : 'test',
 			thing : 'test',
 			use : 'test'
 		},
 		cache:false,
 		success: function(result){
-			process_results(result);
+			console.log(result);
+			process_results(loc,result);
+			
 		},
 		complete: function(comp){
-			console.log('Ajax complete: ' + comp);
+			console.log(comp);
 		},
 		error: function(err){
 			console.log(err);
@@ -201,6 +215,57 @@ function test_gdb_query() {
  * @param  {json object} data [This is the data returned from neo4j]
  * @return {[type]}      [description]
  */
-function process_results(data) {
-	console.log(data);
+function process_results(place,data) {
+	let thing_arr = data.thing;
+	//console.log(data.thing[0].name);
+	if (place == 'foot'){
+		let sect 	= document.getElementById('oth-things');
+		let th_pack = '';
+		if (thing_arr.length > 0){
+			for (let t=0; t<thing_arr.length; t++) {
+				let name = thing_arr[t].name;
+				let link = thing_arr[t].prop1;
+
+				th_pack += '<p class="th-p">';
+				th_pack += '<a class="th-a" name="';
+				th_pack += name;
+				th_pack += '" value="';
+				th_pack += link;
+				th_pack += '" href="'; 
+				th_pack += '#';
+				th_pack += '">';
+				th_pack += name;
+				th_pack += '</a></p>';
+			}
+			sect.innerHTML = th_pack;
+		}
+		else {
+			console.log('No Data');
+		}
+		add_foot_listeners();
+	}
+}
+
+
+function add_foot_listeners() {
+	let things_l = document.getElementsByClassName('th-a');
+	for(let i =0; i<things_l.length; i++) {
+		//console.log("Adding listener");
+		let attri = things_l[i].getAttribute('name');
+		//console.log(attri);
+		things_l[i].addEventListener("click", function(thing_l){
+			//let attr = thing_l.getAttribute('name');
+			//console.log(thing_l.target.name);
+
+			//1: Change the name of the thing
+			pagething = document.getElementById('thing-name');
+			pagething.innerHTML = `${thing_l.target.name}`;
+			//2: Change the description of the thing
+			update_uses(thing_l.target.name);
+			//3: Change the uses attached to the thing
+			get_uses(thing_l.target.name);
+			//4: Remove the thing as an option to pick
+			
+		});
+	}
 }

@@ -138,15 +138,7 @@ header {
 	border-bottom:2px solid navy;
 	text-align: center;
 }
-/*
-nav ul {
-	border-top: 2px solid black;
-	border-bottom:2px solid black;
-	border-left: 2px solid black;
-	border-right: 2px solid black;
-	background: #f7f9fb;
-}
-*/
+
 		
 #nav li {
 	display: inline-block;
@@ -227,21 +219,24 @@ nav ul {
 	border: 4px solid #31708e;
 }
 
-#ul {
-	border: 5px solid green;
-	
-}
 
-#ul li {
+
+.recipe-li {
 	padding-top: 15px;
-	border: 1px solid white;
+	border: 1px solid orange;
 	height: 50px;
 	color: white;
 }
 
-.recipe-div {
+.recipe-div  {
 	margin: auto;
 	width: 90%;
+}
+
+.recipe-div a {
+	display: block;
+	height: auto;
+	
 }
 
 /* =========== Footer Styles Begin here  =========== */

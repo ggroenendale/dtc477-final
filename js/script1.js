@@ -29,7 +29,7 @@ window.onload = setup();
  * @return {[type]} [description]
  */
 function setup() {
-	get_things('foot');
+	//get_things('foot');
 
 	//We can't run this ajax call at the same time as the one
 	//above. Asyncronous and blah blah
@@ -222,35 +222,37 @@ function get_things(loc) {
 
 	//Pack the url together
 	const $gdb_url = gdb_midp + gdb_options;
-
-	//Here we process the actual request to the midpoint
-	$.ajax({
-		url: $gdb_url,
-		type:"GET",
-		dataType:"jsonp",
-		jsonpCallback: 'jsonpcallback',
-		data: {
-			opt : 'test',
-			qtype : 'test',
-			thing : 'test',
-			use : 'test'
-		},
-		cache:false,
-		success: function(result){
-			console.log('Processing Test results:');
-			console.log(result);
-			process_results(loc,result);
-			get_uses('pallet')
-		},
-		complete: function(comp){
-			console.log('Test Ajax complete:');
-			console.log(comp);
-		},
-		error: function(err){
-			console.log('Test Ajax errored:');
-			console.log(err);
-		}
-	}); 
+	if (loc = 'menu') {
+		//Here we process the actual request to the midpoint
+		$.ajax({
+			url: $gdb_url,
+			type:"GET",
+			dataType:"jsonp",
+			jsonpCallback: 'jsonpcallback',
+			data: {
+				opt : 'test',
+				qtype : 'test',
+				thing : 'test',
+				use : 'test'
+			},
+			cache:false,
+			success: function(result){
+				console.log('Processing Test results:');
+				console.log(result);
+				//process_results(loc,result);
+				//get_uses('pallet')
+				return results;
+			},
+			complete: function(comp){
+				console.log('Test Ajax complete:');
+				console.log(comp);
+			},
+			error: function(err){
+				console.log('Test Ajax errored:');
+				console.log(err);
+			}
+		}); 
+	}
 }
 
 function test_gdb_query(loc) {

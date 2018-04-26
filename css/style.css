@@ -99,20 +99,20 @@ h3 {
 	font-family: Raleway, Georgia, Verdana;
 	font-weight: bold;
 	color: navy;
-	text-align: left;
+	text-align: center;
 	text-shadow: .5px .5px #5085A5;
 }
 
 #about {
 	font-size: 1.0em;
 	font-family: Raleway, Georgia, Verdana;
-	text-align: left;
+	text-align: center;
 }
 
 p {
 	font-size: 1.0em;
 	font-family: Raleway, Georgia, Verdana;
-	
+	color: navy;
 }
 
 .photo{
@@ -244,7 +244,7 @@ header {
 
 .recipe-li {
 	padding-top: 15px;
-	border: 1px solid orange;
+	border: 1px solid white;
 	
 	color: white;
 }
@@ -312,6 +312,8 @@ footer {
 	background-color: var(--header-color);
 	height: 120px;
 	width: 100%;
+	border-top: 2px solid navy;
+	border-bottom:2px solid navy;
 }
 
 #foot-wrap {
@@ -321,10 +323,12 @@ footer {
 }
 
 #foot-wrap>h3 {
-	font-size: 1.05em;
+	font-size: 1em;
 	margin-bottom: 10px;
-	color: white;
+	color: navy;
 	font-weight: 400;
+	font-family: Raleway, Georgia, Verdana;
+	text-shadow: 1px 1px #5085A5;
 }
 
 .foot-col {
@@ -335,21 +339,25 @@ footer {
 }
 
 .foot-col>h4 {
-	color: white;
-	font-size: 1.1em;
+	color: navy;
+	font-size: 1em;
 	text-decoration: underline;
+	font-family: Raleway, Georgia, Verdana;
+	text-shadow: 1px 1px #5085A5;
 }
 
 .foot-col>p>a {
 	text-decoration: none;
-	color: white;
+	color: navy;
+	font-family: Raleway, Georgia, Verdana;
+	text-shadow: 1px 1px #5085A5;
 }
 
-#oth-things {
-	width: 100%;
-	height: 20px;
-}
 
+.recipe-div>a>img {
+	display: none;
+
+}	
 
 /* =========== Responsive Styles Begin here  =========== */
 
@@ -438,7 +446,63 @@ footer {
 		display: block;
 		overflow: hidden;
 		border: 3px solid navy;
-		}			
+		}
+		
+.recipe-div>img {
+	display:none;
+
+}
+.recipe-div>a>img {
+	display:none;
+
+}
+
+footer {
+	background-color: var(--header-color);
+	height: 150px;
+	width: 100%;
+	border-top: 2px solid navy;
+	border-bottom:2px solid navy;
+}
+
+#foot-wrap {
+	width: 100%;
+	margin: auto;
+	padding: 10px;
+}
+
+#foot-wrap>h3 {
+	font-size: 1em;
+	margin-bottom: 10px;
+	color: navy;
+	font-weight: 400;
+	font-family: Raleway, Georgia, Verdana;
+	text-shadow: 1px 1px #5085A5;
+}
+
+.foot-col {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+	width: 22%;
+}
+
+.foot-col>h4 {
+	color: navy;
+	font-size: 1em;
+	text-decoration: underline;
+	font-family: Raleway, Georgia, Verdana;
+	text-shadow: 1px 1px #5085A5;
+}
+
+.foot-col>p>a {
+	text-decoration: none;
+	color: navy;
+	font-family: Raleway, Georgia, Verdana;
+	text-shadow: 1px 1px #5085A5;
+	
+}
+				
 		}
 			
 /* start of query for desktop */
@@ -468,7 +532,7 @@ h3 {
 	font-family: Raleway, Georgia, Verdana;
 	font-weight: bold;
 	color: navy;
-	text-align: left;
+	text-align: center;
 	text-shadow: .5px .5px #5085A5;
 	
 }
@@ -476,13 +540,13 @@ h3 {
 #about {
 	font-size: 1.0em;
 	font-family: Raleway, Georgia, Verdana;
-	text-align: left;
+	text-align: center;
 }
 
 p {
 	font-size: 2em;
 	font-family: Raleway, Georgia, Verdana;
-	
+	color: navy;
 }
 
 
@@ -654,6 +718,62 @@ img{
 		display: block;
 		overflow: hidden;
 		border: 3px solid navy;
-		}			
+		}
+		
+.recipe-div>img {
+	display:none;
+
+}			
+
+.recipe-div>a>img {
+	display:none;
+
+}
+
+footer {
+	background-color: var(--header-color);
+	height: 210px;
+	width: 100%;
+	border-top: 2px solid navy;
+	border-bottom:2px solid navy;
+	
+}
+
+#foot-wrap {
+	width: 100%;
+	margin: auto;
+	padding: 10px;
+}
+
+#foot-wrap>h3 {
+	font-size: 2em;
+	margin-bottom: 10px;
+	color: navy;
+	font-weight: 400;
+	font-family: Raleway, Georgia, Verdana;
+	text-shadow: 1px 1px #5085A5;
+}
+
+.foot-col {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+	width: 22%;
+}
+
+.foot-col>h4 {
+	color: navy;
+	font-size: 2em;
+	text-decoration: underline;
+	font-family: Raleway, Georgia, Verdana;
+	text-shadow: 1px 1px #5085A5;
+}
+
+.foot-col>p>a {
+	text-decoration: none;
+	color: navy;
+	font-family: Raleway, Georgia, Verdana;
+	text-shadow: 1px 1px #5085A5;
+}
 		
 }

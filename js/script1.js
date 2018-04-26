@@ -32,7 +32,7 @@ function setup() {
 	/**/
 	get_things('foot');
 	/**/
-	get_uses();
+	get_uses(data.name);
 	
 	document.getElementById('sitetitle').text = 'Pallet';
 	document.getElementById('pagetitle').innerHTML = `${data.num} ways to use a ${data.name}`;
@@ -44,6 +44,14 @@ function get_things($opt) {
 	if ($opt == 'foot') {
 		test_gdb_query('foot');
 	}
+}
+
+function get_uses($term) {
+	let payload = {
+		opt : 'uses',
+		thing : $term,
+		
+	};
 }
 
 /**

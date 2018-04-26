@@ -10,6 +10,12 @@
  * 
  */
 
+let def_thing = {
+	num : 4,
+	name : 'Pallet',
+	thing : 'Pallet'
+}
+
 /**
  * window.onload allows a function to run as soon as the 
  * window is loading
@@ -23,35 +29,31 @@ window.onload = setup();
  * @return {[type]} [description]
  */
 function setup() {
-	let data = {
-		num : 4,
-		name : 'Pallet',
-		thing : 'Pallet'
-	}
-
-	/**/
 	get_things('foot');
-	/**/
-	get_uses(data.name);
+
+	//We can't run this ajax call at the same time as the one
+	//above. Asyncronous and blah blah
+	//get_uses(data.name);
 	
-	document.getElementById('sitetitle').text = 'Pallet';
-	document.getElementById('pagetitle').innerHTML = `${data.num} ways to use a ${data.name}`;
-	document.getElementById('thing-name').innerHTML = `${data.thing}`;	
+	document.getElementById('sitetitle').text = def_thing.name;
+	document.getElementById('pagetitle').innerHTML = `${def_thing.num} ways to use a ${def_thing.name}`;
+	document.getElementById('thing-name').innerHTML = `${def_thing.thing}`;	
 }
 
 function get_things($opt) {
 	let things = [];
 	if ($opt == 'foot') {
-		test_gdb_query('foot');
+		get_things('foot');
 	}
 }
 
-function get_uses($term) {
-	let payload = {
-		opt : 'uses',
-		thing : $term,
-		
-	};
+function get_uses($thing) {
+	let packet = {
+		opt : 'norm',
+		qtype: 'uses',
+		term : $thing
+	}
+	gdb_query(packet);
 }
 
 /**
@@ -162,21 +164,90 @@ function gdb_query(packet) {
 
 	//Pack the url together
 	const $gdb_url = gdb_midp + gdb_options;
+	//Here we process the actual request to the midpoint
+	if (packet.qtype == 'thing') {
+		$.ajax({
+			url: $gdb_url,
+			type:"GET",
+			dataType:"jsonp",
+			jsonpCallback: 'jsonpcallback',
+			data: packet,
+			cache:false,
+			success: function(result){
+				console.log('Processing Thing results:');
+				process_results(result);
+			},
+			complete: function(comp){
+				console.log('Thing Ajax complete:');
+				console.log(comp);
+			},
+			error: function(err){
+				console.log('Thing Ajax errored:');
+				console.log(err);
+			}
+		}); 
+	}
+	else if (packet.qtype == 'uses') {
+		$.ajax({
+			url: $gdb_url,
+			type:"GET",
+			dataType:"jsonp",
+			jsonpCallback: 'jsonpcallback',
+			data: packet,
+			cache:false,
+			success: function(result){
+				console.log('Processing Uses results:');
+				console.log(result);
+				process_uses(result);
+			},
+			complete: function(comp){
+				console.log('Uses Ajax complete:');
+				console.log(comp);
+			},
+			error: function(err){
+				console.log('Uses Ajax errored:');
+				console.log(err);
+			}
+		}); 
+	}
+}
+
+function get_things(loc) {
+	//Declare a variable for the url of the midpoint which is the php file
+	//that handles requests to graphenedb.com
+	const gdb_midp = 'http://dtc-wsuv.org/ggroenendale17/gdb/index.php';
+
+	//This option is for any options to be included in the url
+	const gdb_options = '';
+
+	//Pack the url together
+	const $gdb_url = gdb_midp + gdb_options;
 
 	//Here we process the actual request to the midpoint
 	$.ajax({
 		url: $gdb_url,
 		type:"GET",
-		dataType:"json",
-		data: packet,
+		dataType:"jsonp",
+		jsonpCallback: 'jsonpcallback',
+		data: {
+			opt : 'test',
+			qtype : 'test',
+			thing : 'test',
+			use : 'test'
+		},
 		cache:false,
 		success: function(result){
-			process_results(result);
+			console.log('Processing Test results:');
+			console.log(result);
+			process_results(loc,result);
+			get_uses('pallet')
 		},
 		complete: function(comp){
-			console.log('Ajax complete: ' + comp);
+			console.log('Test Ajax complete:');
+			console.log(comp);
 		},
 		error: function(err){
+			console.log('Test Ajax errored:');
 			console.log(err);
 		}
 	}); 
@@ -207,14 +278,17 @@ function test_gdb_query(loc) {
 		},
 		cache:false,
 		success: function(result){
+			console.log('Processing Test results:');
 			console.log(result);
 			process_results(loc,result);
 			
 		},
 		complete: function(comp){
+			console.log('Test Ajax complete:');
 			console.log(comp);
 		},
 		error: function(err){
+			console.log('Test Ajax errored:');
 			console.log(err);
 		}
 	}); 
@@ -256,10 +330,9 @@ function process_results(place,data) {
 	}
 }
 
-
 function add_foot_listeners() {
 	let things_l = document.getElementsByClassName('th-a');
-	for(let i =0; i<things_l.length; i++) {
+	for(let i = 0; i<things_l.length; i++) {
 		//console.log("Adding listener");
 		let attri = things_l[i].getAttribute('name');
 		//console.log(attri);
@@ -271,7 +344,7 @@ function add_foot_listeners() {
 			pagething = document.getElementById('thing-name');
 			pagething.innerHTML = `${thing_l.target.name}`;
 			//2: Change the description of the thing
-			update_uses(thing_l.target.name);
+			//update_uses(thing_l.target.name);
 			//3: Change the uses attached to the thing
 			get_uses(thing_l.target.name);
 			//4: Remove the thing as an option to pick
@@ -279,3 +352,49 @@ function add_foot_listeners() {
 		});
 	}
 }
+
+function process_uses(dats) {
+	let use_arr = dats.use;
+	//console.log(dats.use);
+	let list	= document.getElementById('recipes');
+	let use_pack = '<ul>';
+	if (use_arr.length > 0){
+		for (let u=0; u<use_arr.length; u++) {
+			let type = use_arr[u].type;
+			let desc = use_arr[u].use_desc;
+			let link = use_arr[u].use_url;
+			let vote = use_arr[u].vote_cnt;
+			let made = use_arr[u].madething;
+
+			use_pack += '<li class="recipe-li">';
+			use_pack += '<div class="recipe-div" data-name="';
+			use_pack += made;
+			use_pack += '" data-url="';
+			use_pack += link;
+			use_pack += '" data-type="';
+			use_pack += type;
+			use_pack += '" data-desc="';
+			use_pack += desc;
+			use_pack += '" data-vote="';
+			use_pack += vote;
+			use_pack += '"><p><a href="'
+			use_pack += link;
+			use_pack += '">';
+			use_pack += type + ' a ' + made;
+			use_pack += '</a></p></div></li>';
+		}
+		use_pack += '</ul>';
+		list.innerHTML = use_pack;
+	}
+	else if (use_arr.length == 0 ){
+		console.log('Nothing in array.');
+		use_pack += '<li class="recipe-li">';
+		use_pack += '<div class="recipe-div">';
+		use_pack += `<p style="color: black;">We're sorry. There isn't a use for this in the database. Do you have one?<p></div>`;
+		list.innerHTML = use_pack;
+	}
+	else {
+		console.log('No Data');
+	}
+}
+

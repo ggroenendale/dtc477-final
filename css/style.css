@@ -94,9 +94,30 @@ h2 {
 	text-shadow: .5px .5px #5085A5;
 }
 
+h3 {
+	font-size: 1.5em;
+	font-family: Raleway, Georgia, Verdana;
+	font-weight: bold;
+	color: navy;
+	text-align: left;
+	text-shadow: .5px .5px #5085A5;
+}
+
+#about {
+	font-size: 1.0em;
+	font-family: Raleway, Georgia, Verdana;
+	text-align: left;
+}
+
 p {
 	font-size: 1.0em;
 	font-family: Raleway, Georgia, Verdana;
+	
+}
+
+.photo{
+	height: 300px;
+	
 }
 
 /* =========== Main DOM Styles Begin here  =========== */
@@ -111,7 +132,7 @@ background-color: #f7f9fb;
 	width: 100%;
 }
 
-img{
+#img-wrapper>img {
 	display: block;
     margin-left: auto;
     margin-right: auto;
@@ -224,8 +245,12 @@ header {
 .recipe-li {
 	padding-top: 15px;
 	border: 1px solid orange;
-	height: 50px;
+	
 	color: white;
+}
+
+.recipe-li-h {
+	height: 50px;
 }
 
 .recipe-div  {
@@ -238,6 +263,48 @@ header {
 	height: auto;
 	
 }
+
+#contact {
+		text-align:center;
+		color: navy;
+		}
+		
+#formcontainer {
+		text-align:center;
+		color: navy;
+		width 100%;
+		height: auto;
+		}
+		
+#contact_form {
+		width:100%;
+		
+		}
+		
+img{
+	display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+	
+.geoffcontainer {
+		width:300px;
+		height: 250px;
+		margin: auto;
+		display: block;
+		overflow: hidden;
+		border: 3px solid navy;
+		}	
+
+.erincontainer {
+		width:300px;
+		height: 250px;
+		margin:auto;
+		display: block;
+		overflow: hidden;
+		border: 3px solid navy;
+		}			
 
 /* =========== Footer Styles Begin here  =========== */
 
@@ -354,6 +421,24 @@ footer {
 	margin: auto;
 	width: 90%;
 }
+
+.geoffcontainer {
+		width:450px;
+		height: 350px;
+		margin: auto;
+		display: block;
+		overflow: hidden;
+		border: 3px solid navy;
+		}	
+
+.erincontainer {
+		width:450px;
+		height: 350px;
+		margin:auto;
+		display: block;
+		overflow: hidden;
+		border: 3px solid navy;
+		}			
 		}
 			
 /* start of query for desktop */
@@ -378,9 +463,26 @@ h2 {
 	text-shadow: .5px .5px #5085A5;
 }
 
+h3 {
+	font-size: 3em;
+	font-family: Raleway, Georgia, Verdana;
+	font-weight: bold;
+	color: navy;
+	text-align: left;
+	text-shadow: .5px .5px #5085A5;
+	
+}
+
+#about {
+	font-size: 1.0em;
+	font-family: Raleway, Georgia, Verdana;
+	text-align: left;
+}
+
 p {
 	font-size: 2em;
 	font-family: Raleway, Georgia, Verdana;
+	
 }
 
 
@@ -509,5 +611,49 @@ nav ul {
 	border: 4px solid #8fc1e3;
 	
 }
+
+#contact {
+		text-align:center;
+		color: navy;
+		width: 100%;
+		height: auto;
+		}
+		
+#formcontainer {
+		text-align:center;
+		color: navy;
+		width 100%;
+		height: auto;
+		}
+		
+#contact_form {
+		width:100%;
+		height: auto;
+		}
+		
+img{
+	display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+	
+.geoffcontainer {
+		width:700px;
+		height: 650px;
+		margin: auto;
+		display: block;
+		overflow: hidden;
+		border: 3px solid navy;
+		}	
+
+.erincontainer {
+		width:700px;
+		height: 650px;
+		margin:auto;
+		display: block;
+		overflow: hidden;
+		border: 3px solid navy;
+		}			
 		
 }

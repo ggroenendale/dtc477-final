@@ -29,8 +29,10 @@ function setup() {
 		thing : 'Pallet'
 	}
 
+	/**/
 	get_things('foot');
-	add_foot_listeners();
+	/**/
+	get_uses();
 	
 	document.getElementById('sitetitle').text = 'Pallet';
 	document.getElementById('pagetitle').innerHTML = `${data.num} ways to use a ${data.name}`;

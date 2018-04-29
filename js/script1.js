@@ -35,12 +35,12 @@ function setup() {
 	//above. Asyncronous and blah blah
 	//get_uses(data.name);
 	
-	document.getElementById('sitetitle').text = def_thing.name;
-	document.getElementById('pagetitle').innerHTML = `${def_thing.num} ways to use a ${def_thing.name}`;
-	document.getElementById('thing-name').innerHTML = `${def_thing.thing}`;	
+	//document.getElementById('sitetitle').text = def_thing.name;
+	//document.getElementById('pagetitle').innerHTML = `${def_thing.num} ways to use a ${def_thing.name}`;
+	//document.getElementById('thing-name').innerHTML = `${def_thing.thing}`;	
 }
 
-function get_things($opt) {
+function get_thingsaaa($opt) {
 	let things = [];
 	if ($opt == 'foot') {
 		get_things('foot');
@@ -241,7 +241,7 @@ function get_things(loc) {
 				console.log(result);
 				//process_results(loc,result);
 				//get_uses('pallet')
-				return results;
+				exportto_menu(result);
 			},
 			complete: function(comp){
 				console.log('Test Ajax complete:');
@@ -399,4 +399,3 @@ function process_uses(dats) {
 		console.log('No Data');
 	}
 }
-

@@ -5,5 +5,5 @@ We played a lot with different designs to create a usable interface. There are s
 
 The data backend was created using a graph database called neo4j. Graph databases enable node to node relationships where node __"a"__ may be a _"pallet"_ and node __"b"__ would be a _"doghouse"_. The relationship between the two would be that pallets can be used to create a doghouse. This could be extended to almost anything on the planet. Old jeans used to make a beanbag chair, milk jugs recycled to make other plastics, or egg yolks made into custard. 
 
-![Graphenedb](https://www.github.com/ggroenendale/thingable/master/graphenedb-pic.png "Text") 
+![Graphenedb](master/graphenedb-pic.png "Text") 
 Moar Text

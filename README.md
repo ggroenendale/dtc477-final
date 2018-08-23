@@ -1,4 +1,4 @@
-# Thingable - DTC 477 Final Project
+# Thingable.io - DTC 477 Final Project
 This was the final project for Spring 2018 DTC 477 - Advanced Multimedia course with Will Luers. During this project I collaborated with fellow student Erin Cooper to build a webpage that could relate raw materials to what can be created with each raw material. We started with a pallet and found ways that creators and makers have taken a pallet to create something new. Part of this project required creating a usable interface to explore not only the raw materials but to also explore what can be made by the raw material. The other part of this project required a complex data structure behind the scenes to store all of the connections.
 
 We played a lot with different designs to create a usable interface. There are still more iterations that can the project can go through to make it more usable. Currently the design features a list of things that can be created in a hamburger style menu with images and links that can also be revealed.

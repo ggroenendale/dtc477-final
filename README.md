@@ -4,5 +4,5 @@ This was the final project for Spring 2018 DTC 477 - Advanced Multimedia course 
 We played a lot with different designs to create a usable interface. There are still more iterations that can the project can go through to make it more usable. Currently the design features a list of things that can be created in a hamburger style menu with images and links that can also be revealed.
 
 The data backend was created using a graph database called neo4j. Graph databases enable node to node relationships where node __"a"__ may be a _"pallet"_ and node __"b"__ would be a _"doghouse"_. The relationship between the two would be that pallets can be used to create a doghouse. This could be extended to almost anything on the planet. Old jeans used to make a beanbag chair, milk jugs recycled to make other plastics, or egg yolks made into custard. 
-Picture:
-![alt text](https://www.github.com/ggroenendale/thingable/master/graphenedb-pic.jpg "Neo4j console output view")
+
+![](https://www.github.com/ggroenendale/thingable/master/graphenedb-pic.jpg)
